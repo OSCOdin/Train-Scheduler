@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="assets/js/scheduler.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Train Scheduler</h1>
+            <p class="lead">Look and see when your train will arrive next, or add your trian to the schedule.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Train Schedule</div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody id="TrainTable">
+                 
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div id="addContainer" class="container">
+        <div class="card">
+            <div class="card-header">
+                Add Train
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Train Name</span>
+                </div>
+                <input id="nameInput" type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Destination</span>
+                </div>
+                <input id="destinationInput" type="text" class="form-control" placeholder="Destination" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">First Train Time</span>
+                </div>
+                <input id="firstInput" type="time" class="form-control" placeholder="(HH:mm - military time)" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Frequency</span>
+                </div>
+                <input id="frequencyInput" type="number" class="form-control" placeholder="(min)" aria-label="Username" aria-describedby="basic-addon1">
+
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
